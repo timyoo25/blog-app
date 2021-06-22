@@ -1,12 +1,12 @@
 import db from "../db/connection.js";
-import Product from "../models/post.js";
+import Post from "../models/post.js";
 
 const insertData = async () => {
   // reset database
   await db.dropDatabase();
 
   // products data that we want inserted into database
-  const products = [
+  const posts = [
     {
       name: "Product 001",
       imgURL:
@@ -175,8 +175,8 @@ const insertData = async () => {
   ];
 
   // insert products into database
-  await Product.insertMany(products);
-  console.log("Created products!");
+  await Post.insertMany(posts);
+  console.log("Created posts!");
 
   // close database connection. done.
   db.close();
