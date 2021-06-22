@@ -9,4 +9,4 @@ const Post = new Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("products", Post);
+export default mongoose.model("posts", Post);
