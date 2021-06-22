@@ -1,5 +1,5 @@
 import db from '../db/connection.js'
-import Product from '../models/product.js'
+import Product from '../models/post.js'
 
 const insertData = async () => {
   // reset database
