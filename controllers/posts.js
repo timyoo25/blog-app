@@ -3,6 +3,7 @@ import Post from '../models/post.js'
 export const getPosts = async (req, res) => {
   try {
     const posts = await Post.find()
+    console.log("Inside controller:",posts)
     res.json(posts)
   } catch (error) {
     console.log(error.message)

@@ -1,8 +1,9 @@
-import api from './apiConfig'
+import api from './api.js'
 
 export const getPosts = async () => {
   try {
       const response = await api.get('/posts')
+      console.log("inside getPosts: ", response)
       return response.data
   } catch (error) {
       throw error
