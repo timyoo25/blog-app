@@ -8,11 +8,11 @@ function App() {
     <div className="App">
   
       <Route path="/">
-     
         <Posts />
-
       </Route>
-
+      <Route path="">
+        
+      </Route>
      
     </div>
   );

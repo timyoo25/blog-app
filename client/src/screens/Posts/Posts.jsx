@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getPosts } from "../../services/posts.js"
+import { Link } from 'react-router-dom'
+import './Posts.css'
 
 export default function Posts() {
   const [posts, setPosts] = useState([]);
@@ -15,14 +17,16 @@ export default function Posts() {
   }, [])
   
   return (
-    <div>
-      <p>HIIIIIIIIIIII</p>
+    <div className = "posts-parent" >
+      <p>Posts Page:</p>
       {posts.map(post => {
         return (
+            <Link to={`/posts/${post._id}`}>
           <div className = "post-container">
             <p>{post.name}</p>
             <p>{post.comment}</p>
           </div>
+            </Link>
         )
       })}
     </div>
