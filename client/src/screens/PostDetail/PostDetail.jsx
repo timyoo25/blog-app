@@ -14,7 +14,7 @@ export default function PostDetail() {
       setPost(res);
     }
     fetchPost();
-  }, []);
+  }, [id]);
 
   const createdDate = new Date(post.createdAt);
   return (
