@@ -1,24 +1,21 @@
 import "./Nav.css";
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
     <nav>
       <div className="nav">
         NAV
-        {/* <NavLink className="logo" to="/">
-          ProductsApp
-        </NavLink>
-
+        
         <div className="links">
-          <NavLink className="link" to="/products">
-            Products
+          <NavLink className="link" to="/">
+            Posts
           </NavLink>
 
-          <NavLink className="link" to="/add-product">
-            Add Product
+          <NavLink className="link" to="/new">
+            Add Post
           </NavLink>
-        </div> */}
+        </div> 
       </div>
     </nav>
   );

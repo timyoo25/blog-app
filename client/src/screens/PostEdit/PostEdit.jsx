@@ -1,6 +1,7 @@
 import { useState, useEffect, useHistory } from 'react'
 import { useParams, Redirect } from 'react-router-dom'
 import { getPost, updatePost } from '../../services/posts'
+import Layout from '../../components/Layout/Layout' 
 
 export default function PostEdit(props) {
 
@@ -33,7 +34,7 @@ export default function PostEdit(props) {
     e.preventDefault()
     let { id } = props.match.params
     const submit = await updatePost(id, post)
-    setUpdated(submit)
+    setUpdated(prevState => !prevState)
     // history.push(`posts/${id}`)
   }
 
@@ -42,6 +43,7 @@ export default function PostEdit(props) {
   }
 
   return (
+    <Layout>
     <div className="post-edit">
       <div>
       <form onSubmit={handleSubmit}>
@@ -61,5 +63,6 @@ export default function PostEdit(props) {
       </form>
       </div>
     </div>
+    </Layout>
   )
 }

@@ -16,7 +16,7 @@ function App() {
     
       <Route path="/new" component={PostCreate}/>
     
-      <Route path="/posts/:id" component={PostDetail} />
+      <Route exact path="/posts/:id" component={PostDetail} />
 
       <Route exact path="/posts/:id/edit" component={PostEdit}/>
 
