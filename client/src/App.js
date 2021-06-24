@@ -1,18 +1,25 @@
-import Posts from "./screens/Posts/Posts";
+import { Route } from 'react-router-dom'
+
+import PostCreate from './screens/PostCreate/PostCreate'
+import PostDetail from "./screens/PostDetail/PostDetail";
 import PostEdit from "./screens/PostEdit/PostEdit";
-import { Route } from "react-router-dom";
+import Posts from './screens/Posts/Posts'
 
 import "./App.css";
+
 
 function App() {
   return (
     <div className="App">
-      <Route path="/">
-        <Posts />
-      </Route>
-      <Route exact path="/posts/:id/edit">
-        <PostEdit />
-      </Route>
+    
+      <Route exact path="/" component={Posts}/>
+    
+      <Route path="/new" component={PostCreate}/>
+    
+      <Route path="/posts/:id" component={PostDetail} />
+
+      <Route exact path="/posts/:id/edit" component={PostEdit}/>
+
     </div>
   );
 }

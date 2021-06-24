@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
 import { getPosts } from "../../services/posts.js";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Layout from "../../components/Layout/Layout";
 import "./Posts.css";
 
 export default function Posts() {
@@ -16,18 +17,20 @@ export default function Posts() {
   }, []);
 
   return (
-    <div className="posts-parent">
-      <p>Posts Page:</p>
-      {posts.map((post) => {
-        return (
-          <Link className="post-link" to={`/posts/${post._id}`}>
-            <div className="post-container">
-              <p className="post-name  post">{post.name}</p>
-              <p className="post-comment post">{post.comment}</p>
-            </div>
-          </Link>
-        );
-      })}
-    </div>
+    <Layout>
+      <div className="posts-parent">
+        <p>Posts Page:</p>
+        {posts.map((post) => {
+          return (
+            <Link className="posts-link" to={`/posts/${post._id}`}>
+              <div className="posts-container">
+                <p className="posts-name  posts">{post.name}</p>
+                <p className="posts-comment posts">{post.comment}</p>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+    </Layout>
   );
 }
