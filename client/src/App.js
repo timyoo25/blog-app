@@ -1,22 +1,26 @@
-import Posts from './screens/Posts/Posts'
-import PostCreate from './screens/PostCreate/PostCreate'
 import { Route } from 'react-router-dom'
 
-import './App.css';
+import PostCreate from './screens/PostCreate/PostCreate'
+import PostDetail from "./screens/PostDetail/PostDetail";
+import Posts from './screens/Posts/Posts'
+
+import "./App.css";
+
 
 function App() {
   return (
     <div className="App">
-  
+    
       <Route exact path="/">
         <Posts />
       </Route>
-      <Route path="">
-        
-      </Route>
+    
       <Route path="/new">
         <PostCreate />
-     </Route>
+      </Route>
+    
+      <Route path="/posts/:id" component={PostDetail} />
+
     </div>
   );
 }
