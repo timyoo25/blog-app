@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { getPost, updatePost } from "../../services/posts";
 import Layout from '../../components/Layout/Layout' 
+import "./PostEdit.css"
 
 export default function PostEdit(props) {
   const { id } = useParams();
@@ -44,27 +45,29 @@ export default function PostEdit(props) {
 
   return (
     <Layout>
-    <div className="post-edit">
       <div>
-        <form onSubmit={handleSubmit}>
+        <form className="post-edit" onSubmit={handleSubmit}>
           <input
             className="edit-name"
             name="name"
             value={post.name}
             onChange={(e) => handleChange(e)}
           />
-          <input
-            className="edit-comment"
-            name="comment"
-            value={post.comment}
-            onChange={(e) => handleChange(e)}
-          />
+          <br />
+          <textarea
+          className="comment-edit"
+          rows={10}
+          placeholder="post body"
+          value={post.comment}
+          name="comment"
+          onChange={(e) => handleChange(e)}
+        />
           <button type="submit" className="submit-button">
             Save
           </button>
         </form>
       </div>
-    </div>
+    
     </Layout>
   )
 
