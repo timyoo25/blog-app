@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { createPost } from '../../services/posts'
+import Layout from '../../components/Layout/Layout'
 import "./PostCreate.css"
 
 export default function PostCreate() {
@@ -30,6 +31,7 @@ export default function PostCreate() {
     return <Redirect to={'/'} />
   }
   return (
+    <Layout>
     <div>
       <form className="create-post-form" onSubmit={handleSubmit}>
         <input className="input-name"
@@ -53,6 +55,7 @@ export default function PostCreate() {
         />
         <button type='submit' className="create-submit-button">Submit</button>
       </form>
-    </div>
+      </div>
+    </Layout>
   )
 }
