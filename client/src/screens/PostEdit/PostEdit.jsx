@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, Redirect } from 'react-router-dom'
 import { getPost, updatePost } from '../../services/posts'
 
-export default function PostEdit() {
+export default function PostEdit(props) {
 
   const { id } = useParams()
   const { updated, setUpdated } = useState(false) 
