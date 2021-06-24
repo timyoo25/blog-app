@@ -27,7 +27,7 @@ export default function PostEdit(props) {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const submit = await updatePost(id, post)
     setUpdated(submit)
