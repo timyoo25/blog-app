@@ -1,11 +1,12 @@
-import { useState, useEffect, useHistory } from "react";
+
+import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { getPost, updatePost } from "../../services/posts";
+import Layout from '../../components/Layout/Layout' 
 
 export default function PostEdit(props) {
   const { id } = useParams();
   const [updated, setUpdated] = useState(false);
-  // const history = useHistory()
   const [post, setPost] = useState({
     name: "",
     comment: "",
@@ -29,11 +30,12 @@ export default function PostEdit(props) {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    let { id } = props.match.params;
-    const submit = await updatePost(id, post);
-    setUpdated(submit);
-    // history.push(`posts/${id}`)
+
+    e.preventDefault()
+    let { id } = props.match.params
+    const submit = await updatePost(id, post)
+    setUpdated(prevState => !prevState)
+
   };
 
   if (updated) {
@@ -41,6 +43,7 @@ export default function PostEdit(props) {
   }
 
   return (
+    <Layout>
     <div className="post-edit">
       <div>
         <form onSubmit={handleSubmit}>
@@ -62,5 +65,7 @@ export default function PostEdit(props) {
         </form>
       </div>
     </div>
-  );
+    </Layout>
+  )
+
 }
