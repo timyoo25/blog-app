@@ -25,6 +25,7 @@ export default function Posts() {
             <Link className="posts-link" to={`/posts/${post._id}`}>
               <div className="posts-container">
                 <p className="posts-name  posts">{post.name}</p>
+                <hr />
                 <p className="posts-comment posts">{post.comment}</p>
               </div>
             </Link>
