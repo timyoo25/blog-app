@@ -20,7 +20,7 @@ export default function Posts() {
       <p>Posts Page:</p>
       {posts.map((post) => {
         return (
-          <Link to={`/posts/${post._id}`}>
+          <Link className="post-link" to={`/posts/${post._id}`}>
             <div className="post-container">
               <p className="post-name  post">{post.name}</p>
               <p className="post-comment post">{post.comment}</p>
