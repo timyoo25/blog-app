@@ -34,7 +34,7 @@ export default function PostEdit(props) {
   }
 
   if (updated) {
-    return <Redirect to={`/products/${id}`} />
+    return <Redirect to={`/posts/${id}`} />
   }
 
   return (
