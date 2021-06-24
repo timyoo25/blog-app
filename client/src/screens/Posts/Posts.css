@@ -3,16 +3,18 @@
   flex-flow: column wrap;
   align-items: center;
   justify-content: space-around;
-
 }
 
 .post-container {
-  /* display: flex;
-  align-items: center; */
   justify-content: space-around;
   width: 300px;
   height: 250px;
-  background: aliceblue; 
+  background: aliceblue;
   border: solid 1px black;
-  margin: 10px 0px
+  margin: 10px 0px;
+  text-decoration: none;
+}
+
+.post-container > p {
+  text-decoration: none;
 }
