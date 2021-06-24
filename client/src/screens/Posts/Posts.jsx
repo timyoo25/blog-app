@@ -16,7 +16,8 @@ export default function Posts() {
   
   return (
     <div>
-      <p>HIIIIIIIIIIII</p>
+      {/* <p>HIIIIIIIIIIII</p> */}
+      {console.log(posts)}
       {posts.map(post => {
         return (
           <div className = "post-container">
