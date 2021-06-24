@@ -12,9 +12,14 @@
   background: aliceblue;
   border: solid 1px black;
   margin: 10px 0px;
-  text-decoration: none;
 }
 
-.post-container > p {
+.post-container:hover {
+  transition: transform 0.5s;
+  transform: scale(1.01);
+}
+
+.post-link {
   text-decoration: none;
+  color: black;
 }
